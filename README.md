@@ -143,7 +143,9 @@ on an NVIDIA DGX A100 system with 8 × A100 40 GB GPUs.
 
 #### Throughput illustration
 
-![Bulk inference throughput across eight models](docs/images/vllmops_bulk_inference_throughput.png)
+<img width="1969" height="1170" alt="vllmops_bulk_inference_throughput" src="https://github.com/user-attachments/assets/ebc316df-d393-4d51-8ff8-685b343a7e03" />
+
+
 
 #### Latency and reliability
 
