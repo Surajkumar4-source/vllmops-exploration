@@ -19,9 +19,6 @@ The experiments included initial model deployment, API validation, service healt
 
 The results demonstrate that the DGX A100 environment successfully supported multiple independent inference services and sustained concurrent requests during the recorded test windows.
 
-**Scope of this work:** This is an experimental infrastructure and inference-serving study. The reported measurements represent observed results for the specific models, request patterns, generation limits, worker counts, and serving configurations used. They are not intended to represent peak hardware performance, a fully optimized production deployment, or a controlled comparison between inference engines.
-
----
 
 ## 2\. Objectives
 
@@ -70,7 +67,7 @@ The exploration focused on the following objectives.
 | GPU server | NVIDIA DGX A100 |
 | GPU architecture | NVIDIA A100-SXM4 |
 | GPU count | 8 |
-| Memory per GPU | 40 GB |
+| Memory per GPU | 40 GB per GPU |
 | Aggregate nominal GPU memory | 320 GB |
 | Inference engine | vLLM |
 | Model orchestration | vLLM-Ops |
@@ -94,52 +91,8 @@ The main software components were:
 - **vLLM-Ops:** The operational management layer explored for configuring, starting, stopping, and monitoring model-serving instances.
 - **OpenAI-compatible API:** The interface used by the benchmark client to submit chat completion requests.
 - **Continuous inference test client:** The workload generator used to issue repeated concurrent requests and collect benchmark statistics.
-
-For reproducibility, the exact Python version, CUDA version, NVIDIA driver, vLLM version, vLLM-Ops version, model revisions, and launch arguments should also be recorded alongside the repository's deployment configuration.
-
 ---
 
-## 4\. Architecture and Deployment Approach
-
-The experiments used a single DGX A100 host running multiple independent inference services.
-
-Conceptually, the deployment followed this structure:
-
-```
-                  Benchmark Client
-                         |
-             Concurrent HTTP Requests
-                         |
-          OpenAI-Compatible Chat API
-                         |
-        +----------------+----------------+
-        |                |                |
-     Endpoint 0       Endpoint 1       Endpoint 2
-      Port 8101        Port 8102        Port 8103
-        |                |                |
-     GPU 0            GPU 1            GPU 2
-        |                |                |
-     vLLM             vLLM             vLLM
-        |                |                |
-      Model            Model            Model
-
-        ... Additional endpoints on GPUs 3–7 ...
-
-          vLLM-Ops manages selected instances
-```
-
-In the first test case, the baseline endpoint on GPU 0 was started separately, while vLLM-Ops was used to manage the other seven instances.
-
-In the second test case, eight distinct model endpoints were used to evaluate the combined behavior of different model sizes and architectures running simultaneously.
-
-This approach enabled the investigation of two different serving patterns:
-
-1. **Homogeneous deployment:** Replicating the same model across multiple GPUs to serve concurrent requests through separate endpoints.
-2. **Heterogeneous deployment:** Running different models on different GPUs to support multiple inference workloads on a shared server.
-
-The architecture is relevant to environments where several models need to be available at the same time, such as internal AI platforms, development environments, model evaluation systems, and shared inference infrastructure.
-
----
 
 # Test Case 1: Same Model Across All Eight GPUs
 
