@@ -6,7 +6,7 @@ This repository documents my ongoing exploration of **vLLM and vLLM-Ops** for de
 
 The objective is to understand how LLM serving works, how multiple inference instances can run concurrently, and how vLLM-Ops can help manage model lifecycle operations and observe running services.
 
-This is an experimental learning project. The current results represent initial functional and continuous-inference testing, not a maximum-performance benchmark.
+This is an experimental learning. The current results represent initial functional and continuous-inference testing, not a maximum-performance benchmark.
 
 ## Test Environment
 
