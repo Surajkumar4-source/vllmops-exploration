@@ -203,6 +203,10 @@ on an NVIDIA DGX A100 system with 8 × A100 40 GB GPUs.
 <img width="1969" height="1170" alt="vllmops_bulk_inference_throughput" src="https://github.com/user-attachments/assets/ebc316df-d393-4d51-8ff8-685b343a7e03" />
 
 
+
+## With more workers Snapshots
+
+
 ## 1. 
 
 <img width="1575" height="513" alt="image" src="https://github.com/user-attachments/assets/892bbf1a-cf8d-4cd2-b641-f0ec8deb2297" />
@@ -225,12 +229,14 @@ on an NVIDIA DGX A100 system with 8 × A100 40 GB GPUs.
 
 ## 4.
 
-<img width="1707" height="852" alt="Screenshot 2026-10-23 114820" src="https://github.com/user-attachments/assets/7e1b21d7-e620-4a4d-b7ca-41eecde03834" />
+<img width="1231" height="703" alt="image" src="https://github.com/user-attachments/assets/d51b1f62-b0b8-4b6c-bd29-087c3f14848a" />
 
 
 ## 5.
 
-<img width="1231" height="703" alt="image" src="https://github.com/user-attachments/assets/d51b1f62-b0b8-4b6c-bd29-087c3f14848a" />
+
+<img width="1707" height="852" alt="Screenshot 2026-10-23 114820" src="https://github.com/user-attachments/assets/7e1b21d7-e620-4a4d-b7ca-41eecde03834" />
+
 
 ## 6.
 
