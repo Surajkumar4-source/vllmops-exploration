@@ -23,6 +23,10 @@ This is an experimental learning. The current results represent initial function
 | Test duration | Approximately 5 minutes |
 | Test type | Continuous, concurrent inference |
 
+
+
+## Test Case 1 :  Same Model on all 8 GPU
+
 ## What I Have Explored
 
 ### 1. vLLM installation and baseline inference
@@ -125,10 +129,9 @@ These figures describe the specific workload, model, serving configuration, and 
 
 
 
-#    _____________________________________________________________________________________________________________________
+#    _______________________________________________________________________________________
 
-
-## Test Case 2
+## Test Case 2 : 8 distinct models, one per GPU
 
 
 
