@@ -593,6 +593,7 @@ The repository therefore serves as an evolving technical record of learning and 
 
 
 <br><br>
-<br><br>
+
+# _______________________________________________________
 
 **Measurement note:** These figures represent the reported results from this specific workload, model mix, hardware, and concurrency configuration. They should not be treated as maximum hardware capacity or as a direct comparison of model quality. Output-token throughput is based on the API-reported completion-token counts.
