@@ -98,6 +98,33 @@ All eight endpoints completed requests successfully during the recorded test, wi
 
 These figures describe the specific workload, model, serving configuration, and concurrency used in this experiment. They should not be interpreted as the maximum capability of the DGX A100 platform or as a comparison against other inference engines.
 
+
+<br>
+
+## Snapshots
+
+<br>
+
+## 1. 
+
+<img width="1680" height="858" alt="Screenshot 2026-10-22 124415" src="https://github.com/user-attachments/assets/4428255b-96e8-4d64-8869-8200d88a4e87" />
+
+
+<br>
+
+## 2. 
+
+<img width="1014" height="871" alt="Screenshot 2026-10-22 124449" src="https://github.com/user-attachments/assets/3d7d70c4-bb46-4228-b0c5-a18fbc4d9a66" />
+
+
+<br>
+
+## 3. 
+
+<img width="1717" height="880" alt="Screenshot 2026-10-22 120917" src="https://github.com/user-attachments/assets/ca1b5116-fdc0-437a-b0c2-17dad9afa254" />
+
+
+
 #    _____________________________________________________________________________________________________________________
 
 
