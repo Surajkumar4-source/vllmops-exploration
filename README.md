@@ -171,10 +171,6 @@ on an NVIDIA DGX A100 system with 8 × A100 40 GB GPUs.
 | Qwen2.5 7B Instruct | 1,304 | 0 | 4.33 | 419.04 |
 | **Overall** | **21,573** | **0** | **71.58** | **7,051.95** |
 
-#### Throughput illustration
-
-<img width="1969" height="1170" alt="vllmops_bulk_inference_throughput" src="https://github.com/user-attachments/assets/ebc316df-d393-4d51-8ff8-685b343a7e03" />
-
 
 
 #### Latency and reliability
@@ -191,5 +187,74 @@ on an NVIDIA DGX A100 system with 8 × A100 40 GB GPUs.
 - The Qwen2.5 0.5B endpoint reported the highest output-token throughput at 1,557.82 tokens/sec.
 - The Qwen2.5 Coder 1.5B endpoint handled the highest number of requests, at 15.12 requests/sec.
 - The workload achieved 71.58 successful requests/sec overall, with no recorded request failures.
+
+
+
+
+
+<br>
+
+
+
+#### Throughput illustration
+
+<br>
+
+<img width="1969" height="1170" alt="vllmops_bulk_inference_throughput" src="https://github.com/user-attachments/assets/ebc316df-d393-4d51-8ff8-685b343a7e03" />
+
+
+## 1. 
+
+<img width="1575" height="513" alt="image" src="https://github.com/user-attachments/assets/892bbf1a-cf8d-4cd2-b641-f0ec8deb2297" />
+
+
+<br>
+
+## 2. 
+
+
+<img width="1707" height="877" alt="Screenshot 2026-10-23 113319" src="https://github.com/user-attachments/assets/6b98a18d-6ad3-4b3d-be50-811df3ea5ea1" />
+
+
+## 3. 
+
+<img width="1710" height="856" alt="Screenshot 2026-10-23 113720" src="https://github.com/user-attachments/assets/1a19263b-fbc4-4942-8ae8-3d59b343d38e" />
+
+
+
+
+## 4.
+
+<img width="1707" height="852" alt="Screenshot 2026-10-23 114820" src="https://github.com/user-attachments/assets/7e1b21d7-e620-4a4d-b7ca-41eecde03834" />
+
+
+## 5.
+
+<img width="1231" height="703" alt="image" src="https://github.com/user-attachments/assets/d51b1f62-b0b8-4b6c-bd29-087c3f14848a" />
+
+## 6.
+
+
+<img width="1707" height="843" alt="Screenshot 2026-10-23 114837" src="https://github.com/user-attachments/assets/a8c9094c-8ef3-4c00-832a-1e386221fe80" />
+
+
+
+## 7.
+
+<img width="1711" height="847" alt="Screenshot 2026-10-23 114902" src="https://github.com/user-attachments/assets/fd45f612-e36b-471d-a590-3eee3bccd78e" />
+
+## 8.
+
+<img width="1707" height="846" alt="Screenshot 2026-10-23 114948" src="https://github.com/user-attachments/assets/927059be-350d-4fe1-b581-c096fe271325" />
+
+
+
+## 9.
+
+<img width="1707" height="842" alt="Screenshot 2026-10-23 115006" src="https://github.com/user-attachments/assets/506c0139-a7b5-476f-93d4-34287cd6bd83" />
+
+
+
+<br><br>
 
 **Measurement note:** These figures represent the reported results from this specific workload, model mix, hardware, and concurrency configuration. They should not be treated as maximum hardware capacity or as a direct comparison of model quality. Output-token throughput is based on the API-reported completion-token counts.
