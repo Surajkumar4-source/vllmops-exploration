@@ -497,7 +497,102 @@ A more rigorous comparison would hold the workload and request-generation method
 <img width="1707" height="842" alt="Screenshot 2026-10-23 115006" src="https://github.com/user-attachments/assets/506c0139-a7b5-476f-93d4-34287cd6bd83" />
 
 
+<br><br>
 
+
+
+## 17\. Future Exploration and Optimization
+
+The current experiments establish a useful foundation for further work in inference serving, resource utilization, and operational management.
+
+### 17.1 Optimize request concurrency
+
+Run benchmarks with different worker counts, for example 1, 2, 4, 6, 8, and 12 workers per endpoint.
+
+This would help identify how throughput scales with concurrency and where additional workers stop providing meaningful improvements.
+
+Measure both throughput and latency so that increased request capacity is not evaluated independently of user-facing response time.
+
+### 17.2 Evaluate vLLM batching and scheduling
+
+Explore the impact of vLLM configuration parameters related to batching and sequence scheduling, including `max_num_seqs` and `max_num_batched_tokens`, where supported by the installed version.
+
+Compare throughput and latency under the same request workload and document the exact launch arguments used for each run.
+
+### 17.3 Test different model sizes and precisions
+
+Extend the heterogeneous deployment to additional models and supported numerical formats.
+
+Evaluate the trade-offs between output throughput, memory consumption, latency, and model quality rather than assuming that the fastest configuration is necessarily the best application choice.
+
+### 17.4 Monitor GPU utilization and memory
+
+Capture per-GPU utilization and memory consumption throughout each test. Tools such as `nvidia-smi` can provide an initial view, while time-series monitoring can help correlate resource behavior with request throughput and latency.
+
+This would make it easier to identify underutilized GPUs, memory pressure, and possible bottlenecks.
+
+### 17.5 Investigate time to first token and inter-token latency
+
+For streaming workloads, separate the latency before the first generated token from the time spent generating subsequent tokens.
+
+These metrics can help distinguish request queuing and prompt-processing delays from token-generation performance.
+
+### 17.6 Evaluate operational resilience
+
+Test controlled failure scenarios, including restarting an inference process, stopping a model instance, and restoring service availability.
+
+Record restart time, health-check behavior, failed requests during the interruption, and recovery time. These experiments would provide a clearer picture of vLLM-Ops lifecycle management and operational recovery.
+
+### 17.7 Establish a repeatable benchmark suite
+
+Create a standardized benchmark procedure with fixed prompts, output limits, sampling parameters, warm-up periods, concurrency levels, and measurement windows.
+
+Repeat each configuration multiple times and report the mean and variability of the results.
+
+This would improve confidence in comparisons between models, serving settings, and deployment strategies.
+
+### 17.8 Explore multi-GPU model serving
+
+The current deployment primarily uses one independent GPU per endpoint. A subsequent experiment could evaluate tensor parallelism for models that benefit from distributing computation across multiple GPUs.
+
+Such a configuration would answer a different question from the current experiments: how a single model instance behaves when its computation is distributed across several GPUs, rather than how independent model instances perform side by side.
+
+### 17.9 Improve service-level observability
+
+Explore metrics collection and dashboards for:
+
+- Request rate and completed requests.
+- Error rate and timeout count.
+- Request queue depth.
+- Time to first token and inter-token latency.
+- Output-token throughput.
+- GPU utilization and memory consumption.
+- Model loading time and process restart events.
+
+The objective would be to connect operational status with actual inference behavior, rather than relying exclusively on benchmark summaries.
+
+---
+
+## 18\. Conclusion
+
+This exploration demonstrates a practical approach to deploying and testing multiple LLM inference services on an NVIDIA DGX A100 system using vLLM and vLLM-Ops.
+
+The first experiment validated the operation of eight independent endpoints serving Qwen2.5-0.5B-Instruct. Under the recorded five-minute workload, the deployment completed 40,582 requests without reported failures and achieved 17,276.31 output tokens per second in aggregate.
+
+The second experiment extended the setup to eight distinct models. Across the heterogeneous deployment, the benchmark completed 21,573 requests without recorded failures and achieved 7,051.95 output tokens per second.
+
+Together, the experiments provided hands-on experience with model deployment, GPU assignment, endpoint configuration, lifecycle management, concurrent inference, continuous workload generation, and performance measurement.
+
+The work also highlighted the importance of separating request throughput from token throughput and interpreting latency in the context of model size, workload characteristics, and serving configuration.
+
+The next stage is to move from functional validation toward more systematic performance characterization by standardizing workloads, collecting GPU telemetry, testing concurrency levels, evaluating serving parameters, and conducting longer-duration experiments.
+
+The repository therefore serves as an evolving technical record of learning and experimentation with multi-model LLM serving on NVIDIA GPU infrastructure, with a focus on reproducible measurements, operational understanding, and evidence-driven optimization.
+
+
+
+
+<br><br>
 <br><br>
 
 **Measurement note:** These figures represent the reported results from this specific workload, model mix, hardware, and concurrency configuration. They should not be treated as maximum hardware capacity or as a direct comparison of model quality. Output-token throughput is based on the API-reported completion-token counts.
