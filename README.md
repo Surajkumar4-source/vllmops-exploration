@@ -25,7 +25,7 @@ This is an experimental learning. The current results represent initial function
 
 
 
-## Test Case 1 :  Same Model on all 8 GPU
+## Test Case 1 :  Same Model on all 8 GPUs
 
 ## What I Have Explored
 
@@ -129,9 +129,9 @@ These figures describe the specific workload, model, serving configuration, and 
 
 
 
-#    _______________________________________________________________________________________
+#    _______________________________________________
 
-## Test Case 2 : 8 distinct models, one per GPU
+## Test Case 2 : 8 Distinct Models on all 8 GPUs
 
 
 
