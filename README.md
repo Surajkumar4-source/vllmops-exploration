@@ -1,4 +1,4 @@
-# Exploring vLLM and vLLM-Ops on NVIDIA DGX A100
+# Exploring vLLM inferencing and vLLM-Ops on NVIDIA DGX A100
 
 ## 1\. Overview
 
