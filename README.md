@@ -259,6 +259,8 @@ However, these measurements should not be interpreted as the maximum throughput 
 <br>
 <br>
 
+## Demo 1 : Same Model on Each GPU
+
 
 https://github.com/user-attachments/assets/cc22b707-f12f-4ba2-9e4d-07735391d8a4
 
