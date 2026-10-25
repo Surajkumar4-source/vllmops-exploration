@@ -275,9 +275,6 @@ https://github.com/user-attachments/assets/cc22b707-f12f-4ba2-9e4d-07735391d8a4
 
 
 
-#    ____________________________________________
-
-
 # Test Case 2: Eight Distinct Models Across All Eight GPUs
 
 ## 10\. Experimental Objective
@@ -517,8 +514,23 @@ A more rigorous comparison would hold the workload and request-generation method
 <img width="1707" height="842" alt="Screenshot 2026-10-23 115006" src="https://github.com/user-attachments/assets/506c0139-a7b5-476f-93d4-34287cd6bd83" />
 
 
-<br><br>
 
+<br>
+<br>
+<br>
+
+## Demo 2 : Different Model on Each GPU
+
+
+#####   snapshot
+
+
+
+<br>
+
+
+
+<br><br>
 
 
 ## 17\. Future Exploration and Optimization
