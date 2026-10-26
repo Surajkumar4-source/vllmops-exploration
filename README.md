@@ -13,8 +13,6 @@ The exploration progressed through two primary test scenarios:
 
 The experiments included initial model deployment, API validation, service health monitoring, lifecycle operations, concurrent inference, continuous workload generation, and throughput and latency analysis.
 
-The results demonstrate that the DGX A100 environment successfully supported multiple independent inference services and sustained concurrent requests during the recorded test windows.
-
 
 ## 2\. Objectives
 
