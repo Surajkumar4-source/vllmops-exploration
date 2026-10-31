@@ -520,7 +520,10 @@ A more rigorous comparison would hold the workload and request-generation method
 ## Demo 2 : Different Model on Each GPU
 
 
-#####   snapshot
+
+
+https://github.com/user-attachments/assets/4e9985a0-036d-4ef1-bf53-fff77ddf9a8d
+
 
 
 
